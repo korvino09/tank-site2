@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="uk">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Історія танкобудування</title>
   <style>
     nav a {
@@ -22,23 +24,57 @@
       align-items: center;
     }
     video {
-      width: 720px;
-      height: 520px;
+      width: 100%;
+      max-width: 720px;
+      height: auto;
       margin-top: 20px;
     }
     #video-container {
       position: relative;
-    }
-    #video-container img {
-      position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      max-width: 720px;
+    }
+    iframe {
+      width: 100%;
+      max-width: 600px;
+      height: 450px;
+      border: 0;
+    }
+    form {
+      max-width: 400px;
+      width: 100%;
+      background-color: #fff;
+      padding: 20px;
+      margin-top: 40px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    form button {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    form button:hover {
+      background-color: #45a049;
+    }
+    @media (max-width: 768px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
     }
   </style>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <nav>
@@ -47,6 +83,7 @@
   <a href="#american">Американський танковий парк</a>
   <a href="#asian">Азійський танковий парк</a>
 </nav>
+
 <section>
   <h2>Історія танкобудування</h2>
   <p>Історія танкобудування налічує велику кількість подій і періодів, починаючи з появи перших броньованих машин у початку 20-го століття і до сучасних танків новітніх моделей. Ось короткий огляд цієї історії:</p>
@@ -55,14 +92,30 @@
   <p>Перші танки з'явилися під час Першої світової війни, коли була виявлена потреба в нових засобах бойової техніки для подолання запалених укріплень. Танки, такі як британські Mark I, були вперше використані в бою у вересні 1916 року. На відео можна побачити посадку екіпажу та запуск і перетинання окопу.</p>
     
   <div id="video-container">
-    <video controls autoplay muted width="720" height="520" loop>
-      <source src="C:\Users\narta\Desktop\сайт танкобудівництво\video\videoplayback.mp4" type="video/mp4">
+    <video controls autoplay muted loop>
+      <source src="video/videoplayback.mp4" type="video/mp4">
     </video>
   </div>
 
   <h3>Міжвоєнний період</h3>
   <p>Після Першої світової війни танкова техніка продовжила розвиватися в різних країнах, зокрема у Великобританії, СРСР, Німеччині, США та Франції. В цей період відбувалася еволюція конструкції танків та їх озброєння.</p>
-  
+
+  <h3>Форма зворотного зв'язку</h3>
+  <p>Будь ласка, залиште ваш відгук чи питання:</p>
+
+  <form action="process_feedback.php" method="post">
+    <label for="name">Ім'я:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Повідомлення:</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <button type="submit">Надіслати</button>
+  </form>
+
   <h3>Друга світова війна</h3>
   <p>Друга світова війна побачила значний розвиток танкової техніки. Танки стали ключовими елементами бойових операцій на всіх фронтах війни. Приклади таких танків - німецькі "Тигр" і "Пантера", радянські Т-34 та КВ, американські M4 "Шерман".</p>
   
