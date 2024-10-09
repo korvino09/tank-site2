@@ -6,7 +6,16 @@
   <title>Історія танкобудування</title>
   <style>
     nav {
-  text-align: center;
+      text-align: center;
+    }
+    nav ul {
+      list-style-type: none;  /* Прибираємо маркери списку */
+      padding: 0;             /* Забираємо відступи зліва */
+      margin: 0;              /* Забираємо зовнішні відступи */
+    }
+    nav li {
+      display: inline-block;  /* Робимо елементи списку горизонтальними */
+      margin-right: 10px;     /* Додаємо відступ між елементами */
     }
     nav a {
       display: inline-block;
@@ -72,7 +81,7 @@
       background-color: #45a049;
     }
     @media (max-width: 768px) {
-      nav a {
+      nav li {
         display: block;
         margin: 10px 0;
       }
