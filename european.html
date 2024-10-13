@@ -5,17 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Історія танкобудування</title>
   <style>
+    body {
+      background-image: url("photo/tank in forest.jpg"); 
+      background-size: cover; 
+      background-repeat: no-repeat; 
+      background-position: center center;
+      background-attachment: fixed;
+    }
+
     nav {
       text-align: center;
     }
     nav ul {
-      list-style-type: none;  /* Прибираємо маркери списку */
-      padding: 0;             /* Забираємо відступи зліва */
-      margin: 0;              /* Забираємо зовнішні відступи */
+      list-style-type: none;  
+      padding: 0;            
+      margin: 0;              
     }
     nav li {
-      display: inline-block;  /* Робимо елементи списку горизонтальними */
-      margin-right: 10px;     /* Додаємо відступ між елементами */
+      display: inline-block;  
+      margin-right: 10px;     
     }
     nav a {
       display: inline-block;
@@ -80,10 +88,26 @@
     form button:hover {
       background-color: #45a049;
     }
+
+    .custom-div {
+      width: 80%;              
+      height: auto;            
+      margin: 20px auto;       
+      padding: 20px;           
+      background-color: #f0f0f0; 
+      border: 2px solid #4CAF50; 
+      border-radius: 10px;     
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+      text-align: center;      
+    }
+
     @media (max-width: 768px) {
       nav li {
         display: block;
         margin: 10px 0;
+      }
+      .custom-div {
+        width: 95%;  
       }
     }
   </style>
@@ -98,3 +122,11 @@
       <li><a href="asian.html">Азійський танковий парк</a></li>
     </ul>
   </nav>
+
+  <div class="custom-div">
+    <section>
+
+    </section>
+  </div>
+</body>
+</html>
