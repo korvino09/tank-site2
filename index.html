@@ -5,117 +5,142 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Танки світу</title>
   <style>
-    body {
-      background-image: url("photo/tank in forest.jpg"); 
-      background-size: cover; 
-      background-repeat: no-repeat;
-      background-position: center; 
-      background-attachment: fixed;
-    }
+body {
+  background-image: url("photo/tank in forest.jpg"); 
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center; 
+  background-attachment: fixed;
+}
 
-    nav {
-      text-align: center;
-    }
-    nav ul {
-      list-style-type: none;  
-      padding: 0;            
-      margin: 0;              
-    }
-    nav li {
-      display: inline-block;  
-      margin-right: 10px;     
-    }
-    nav a {
-      display: inline-block;
-      padding: 10px;
-      margin: 5px;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      background-color: #4CAF50;
-      transition: background-color 1s ease;
-    }
-    nav a:hover {
-      background-color: #357a38;
-    }
-    section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    video {
-      width: 100%;
-      max-width: 6450px;
-      height: auto;
-      margin-top: 20px;
-    }
-    #video-container {
-      position: relative;
-      width: 100%;
-      max-width: 720px;
-    }
-    iframe {
-      width: 100%;
-      max-width: 600px;
-      height: 450px;
-      border: 0;
-    }
-    form {
-      max-width: 400px;
-      width: 100%;
-      background-color: #fff;
-      padding: 20px;
-      margin-top: 40px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    form input, form textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    form button {
-      width: 100%;
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    form button:hover {
-      background-color: #45a049;
-    }
+nav {
+  text-align: center;
+}
+nav ul {
+  list-style-type: none;  
+  padding: 0;            
+  margin: 0;              
+}
+nav li {
+  display: inline-block;  
+  margin-right: 10px;     
+}
+nav a {
+  display: inline-block;
+  padding: 10px;
+  margin: 5px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  transition: background-color 1s ease;
+}
+nav a:hover {
+  background-color: #357a38;
+}
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+video {
+  width: 100%;
+  max-width: 6450px;
+  height: auto;
+  margin-top: 20px;
+}
+#video-container {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+}
+iframe {
+  width: 100%;
+  max-width: 600px;
+  height: 450px;
+  border: 0;
+}
+form {
+  max-width: 400px;
+  width: 100%;
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 40px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+form button {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+form button:hover {
+  background-color: #45a049;
+}
 
-    .custom-div {
-      width: 80%;              
-      height: auto;            
-      margin: 20px auto;       
-      padding: 20px;           
-      background-color: #f0f0f0; 
-      border: 2px solid #4CAF50; 
-      border-radius: 10px;     
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-      text-align: center;      
-    }
+.custom-div {
+  width: 80%;              
+  height: auto;            
+  margin: 20px auto;       
+  padding: 20px;           
+  background-color: #f0f0f0; 
+  border: 2px solid #4CAF50; 
+  border-radius: 10px;     
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  text-align: center;      
+}
 
-    
-    p {
-      font-size: 18px; 
-      line-height: 1.6; /
-    }
+p {
+  font-size: 18px; 
+  line-height: 1.6;
+}
 
-    @media (max-width: 768px) {
-      nav li {
-        display: block;
-        margin: 10px 0;
-      }
-      .custom-div {
-        width: 95%;  
-      }
-    }
+@media (max-width: 768px) {
+  nav li {
+    display: block;
+    margin: 10px 0;
+  }
+  .custom-div {
+    width: 95%;  
+  }
+}
+
+/* Додатковий CSS для горизонтального вирівнювання фото і відео */
+
+.photo-video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; 
+  padding: 20px;
+}
+
+.photo-video-container img, .photo-video-container video {
+  width: 45%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .photo-video-container {
+    flex-direction: column; 
+  }
+
+  .photo-video-container img, .photo-video-container video {
+    width: 100%;  
+  }
+}
+
   </style>
 </head>
 <body>
@@ -160,9 +185,10 @@
       Перші танки були повільними та неповороткими (переважно 6—9 км/год), більше схожими на античні облогові машини, ніж на сучасну бронетехніку. Використовували їх у піхотному наступі для прориву колючого дроту та придушення кулеметних точок, але британці також мали деяку кількість відносно швидких (до 13,4 км/год) кулеметних танків, як Medium A, призначених для розвитку прориву, розпочатого важкими танками й піхотою. Німецьке командування, зрозумівши безнадійне відставання в танках, до 1918 року сконцентрувалось на боротьбі з танками. Для цього застосовували рови, міни, протитанкові гвинтівки (T-Gewehr), затоплення місцевості, спеціалізовані вогневі точки, але найефективнішим засобом залишались польові гармати, які спричинили найбільше втрат.</p>
       <div id="video-container">
         <video controls muted loop>
-          <source src="video/videoplayback.mp4" type="video/mp4">  <img src="photo/MarkIV Tank_Cambrai_Ans_05297-022-AL-FL.jpg"width="450">
+          <source src="video/videoplayback.mp4" type="video/mp4">  
         </video>
       </div>
+      <img src="photo/MarkIV Tank_Cambrai_Ans_05297-022-AL-FL.jpg"width="450">
       <h1>Друга світова війна</h1> 
     <p>Друга світова війна прискорила прогрес танкобудування. Всього за 6 років танки здійснили більший ривок, аніж за попередні двадцять. Значна частина танків отримала протиснарядне бронювання, могутні довгоствольні гармати (калібром до 152 мм), наприкінці війни з'явилися перші нічні (інфрачервоні) приціли (хоча досліди з їх встановлення на танк проводилися в СРСР ще до війни), радіофікація танків почала вважатися необхідною. Тактика застосування танків також досягла високого рівня досконалості, у перший період війни (1939–1941 рр.) німецькі воєначальники продемонстрували усьому світові, як застосування танкових з'єднань дозволяє здійснити операції з оперативного і стратегічного оточування і швидко виграти війну (т.з. «бліцкриг»). Проте і решта держав (Велика Британія, Франція, Польща, СРСР тощо) створювали свої власні теорії тактики застосування танків, багато в чому схожі на німецьку.
       Протягом Другої світової війни найефективніші розробки створювали радянські та частково, німецькі конструктори. Німецька школа зробила наголос на збільшення бронювання і довжини гармат, поліпшення приладів спостереження (включаючи інфрачервоні прилади нічного бачення), а радянська школа брала переважно технологічністю та масовістю виробництва, вносячи серйозні зміни у конструкції базових типів танків (Т-34, КВ та ІС) лише за крайньої необхідності. Радянська танкова школа створила також досить вдалі моделі інших типів бронетанкової техніки, самохідні артилерійські установки та винищувачі танків. Американська школа за деякої початкової відсталості в плані компонування та технологічності все ж надолужила своє наприкінці війни за рахунок розгортання масового виробництва декількох вибраних моделей, гарної якості сталі та порохів, а також радіофікації (мінімум по дві рації на танк). Найвдалішими німецькими танками стали Pz.IV (наймасовіший), «Тигр» (PzKpfw VI «Tiger I»), та, з деякими застереженнями, «Пантера» (PzKpfw V «Panther») та «Королівський тигр» (PzKpfw VI Ausf.B Tiger II). Найкращими радянськими танками, що брали участь у Другій світовій війні, було визнано середній танк Т-34 (в різних варіаціях, у тому числі його пізніший варіант Т-34-85 з різними модифікаціями 85 мм гармат) та важкий танк ІС-2. Найкращим американським танком став M4 Sherman, який активно постачався в СРСР за ленд-лізом.</p>
