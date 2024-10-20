@@ -5,21 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Танки світу</title>
   <style>
-
-
-#backToTopBtn {
-  display: none; /* Кнопка не відображається за замовчуванням */
-  position: fixed; /* Фіксоване положення на екрані */
-  border: none; /* Без рамки */
-  outline: none; /* Без контуру */
-  cursor: pointer; /* Курсор рука при наведенні */
-  padding: 15px; /* Простір навколо тексту */
-  border-radius: 10px; /* Закруглені кути */
-  
-}
- 
-
-
     body {
       background-image: url("photo/tank in forest.jpg");
       background-size: cover;
@@ -261,33 +246,7 @@
       <li><a href="form.html">Форма зворотнього зв'язку</a></li>
     </ul>
   </nav>
-  <!-- Весь ваш вміст сайту тут -->
-  
-  <!-- Кнопка "Назад нагору" -->
-  <button onclick="topFunction()" id="backToTopBtn" title="Назад нагору">↑</button>
-
-  <script>
-    // Отримуємо елемент кнопки
-    let backToTopBtn = document.getElementById("backToTopBtn");
-
-    // Показуємо кнопку після прокручування вниз 20px
-    window.onscroll = function() {scrollFunction()};
-
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        backToTopBtn.style.display = "block";
-      } else {
-        backToTopBtn.style.display = "none";
-      }
-    }
-
-    // Плавна прокрутка нагору при натисканні на кнопку
-    function topFunction() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    }
+ 
   </script>
 </body>
 </html>
