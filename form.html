@@ -43,25 +43,8 @@ section {
   flex-direction: column;
   align-items: center;
 }
-video {
-  width: 100%;
-  max-width: 6450px;
-  height: auto;
-  margin-top: 20px;
-}
-#video-container {
-  position: relative;
-  width: 100%;
-  max-width: 720px;
-}
-iframe {
-  width: 100%;
-  max-width: 600px;
-  height: 450px;
-  border: 0;
-}
 form {
-  max-width: 400px;
+  max-width: 500px; /* Збільшено ширину форми */
   width: 100%;
   background-color: #fff;
   padding: 20px;
@@ -69,7 +52,7 @@ form {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-form input, form textarea {
+form input, form textarea, form select {
   width: 100%;
   padding: 10px;
   margin: 10px 0;
@@ -88,7 +71,6 @@ form button {
 form button:hover {
   background-color: #45a049;
 }
-
 .custom-div {
   width: 80%;              
   height: auto;            
@@ -100,45 +82,10 @@ form button:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
   text-align: center;      
 }
-
 p {
   font-size: 20px; 
   line-height: 1.6;
 }
-
-@media (max-width: 768px) {
-  nav li {
-    display: block;
-    margin: 10px 0;
-  }
-  .custom-div {
-    width: 95%;  
-  }
-}
-
-.photo-video-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px; 
-  padding: 20px;
-}
-
-.photo-video-container img, .photo-video-container video {
-  width: 45%;
-  height: auto;
-}
-
-@media (max-width: 768px) {
-  .photo-video-container {
-    flex-direction: column; 
-  }
-
-  .photo-video-container img, .photo-video-container video {
-    width: 100%;  
-  }
-}
-
   </style>
 </head>
 <body>
@@ -167,9 +114,46 @@ p {
           <span class="error" id="emailError"></span>
         </div>
         <div class="form-group">
+          <label for="phone">Ваш телефон:</label>
+          <input type="tel" id="phone" name="phone" required placeholder="+380XXXXXXXXX">
+          <span class="error" id="phoneError"></span>
+        </div>
+        <div class="form-group">
+          <label for="country">Країна:</label>
+          <select id="country" name="country" required>
+            <option value="">Виберіть вашу країну</option>
+            <option value="ukraine">Україна</option>
+            <option value="poland">Польща</option>
+            <option value="germany">Німеччина</option>
+            <option value="usa">США</option>
+            <option value="other">Інша</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="subject">Тема:</label>
+          <input type="text" id="subject" name="subject" required placeholder="Тема вашого питання">
+        </div>
+        <div class="form-group">
+          <label for="type">Тип питання:</label>
+          <select id="type" name="type" required>
+            <option value="">Виберіть тип питання</option>
+            <option value="general">Загальне</option>
+            <option value="support">Технічна підтримка</option>
+            <option value="feedback">Зворотній зв'язок</option>
+            <option value="other">Інше</option>
+          </select>
+        </div>
+        <div class="form-group">
           <label for="message">Ваше повідомлення:</label>
-          <textarea id="message" name="message" required></textarea>
+          <textarea id="message" name="message" rows="5" required placeholder="Введіть ваше повідомлення тут..."></textarea>
           <span class="error" id="messageError"></span>
+        </div>
+        <div class="form-group">
+          <label>
+            <input type="checkbox" id="consent" name="consent" required>
+            Я погоджуюсь на обробку моїх персональних даних
+          </label>
+          <span class="error" id="consentError"></span>
         </div>
         <div class="form-group">
           <button type="submit">Відправити</button>
@@ -183,10 +167,14 @@ p {
     const form = document.getElementById('contactForm');
     const nameInput = document.getElementById('name');
     const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
     const messageInput = document.getElementById('message');
+    const consentInput = document.getElementById('consent');
     const nameError = document.getElementById('nameError');
     const emailError = document.getElementById('emailError');
+    const phoneError = document.getElementById('phoneError');
     const messageError = document.getElementById('messageError');
+    const consentError = document.getElementById('consentError');
     const successMessage = document.getElementById('successMessage');
 
     form.addEventListener('submit', function(event) {
@@ -195,7 +183,9 @@ p {
 
       nameError.textContent = '';
       emailError.textContent = '';
+      phoneError.textContent = '';
       messageError.textContent = '';
+      consentError.textContent = '';
       successMessage.textContent = '';
 
       if (nameInput.value.trim() === '') {
@@ -211,8 +201,18 @@ p {
         isValid = false;
       }
 
+      if (phoneInput.value.trim() === '') {
+        phoneError.textContent = "Введіть ваш номер телефону";
+        isValid = false;
+      }
+
       if (messageInput.value.trim() === '') {
         messageError.textContent = "Введіть повідомлення";
+        isValid = false;
+      }
+
+      if (!consentInput.checked) {
+        consentError.textContent = "Необхідно погодитись на обробку персональних даних";
         isValid = false;
       }
 
@@ -230,4 +230,3 @@ p {
 
 </body>
 </html>
-
